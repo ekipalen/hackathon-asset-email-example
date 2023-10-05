@@ -9,7 +9,7 @@ LEAD_ASSET = 'Hackathon Leads'
 TEMPLATE_ASSET = 'Hackathon html template'
 EMAIL_SUBJECT = 'Example email from the Control Room'
 TESTING_MODE = 'Yes'  # Set to "No" to send emails for the actual recipients.
-TEST_RECIPIENT = 'eki.palen@gmail.com'
+TEST_RECIPIENT = '<Your email address.>'
 SENDER = 'You <you@example.com>'
 
 @task

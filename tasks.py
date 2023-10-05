@@ -5,15 +5,17 @@ from RPA.Robocorp.Storage import Storage
 import csv
 import io
 
-EMAIL_SUBJECT = "Example email from the Control Room"
+LEAD_ASSET = 'Hackathon Leads'
+TEMPLATE_ASSET = 'Hackathon html template'
+EMAIL_SUBJECT = 'Example email from the Control Room'
 
 @task
 def minimal_task():
     storage = Storage()
 
-    leads = storage.get_text_asset('Hackathon Leads')
+    leads = storage.get_text_asset(LEAD_ASSET)
     leads = csv.DictReader(io.StringIO(leads))
-    templatepath = storage.get_file_asset('Hackathon html template', 'email_template.html', overwrite=True)
+    templatepath = storage.get_file_asset(TEMPLATE_ASSET, 'email_template.html', overwrite=True)
     with open(templatepath, 'r') as file:
         email_template = file.read()
 

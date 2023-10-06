@@ -13,7 +13,7 @@ TEST_RECIPIENT = '<Your email address.>'
 SENDER = 'You <you@example.com>'
 
 @task
-def minimal_task():
+def asset_email_example():
     storage = Storage()
 
     leads = storage.get_text_asset(LEAD_ASSET)
@@ -26,7 +26,6 @@ def minimal_task():
         email_body = email_template.replace('[FIRSTNAME]',lead['firstname'])
         email_body = email_body.replace('[COMPANY]',lead['company'])
         email_body = email_body.replace('[COMPANYUPPER]',lead['company'].upper())
-        print(email_body)
         if TESTING_MODE == 'No':
             send_email(email_body,lead['email'])
     
